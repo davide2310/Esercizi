@@ -1,0 +1,55 @@
+def perimetro_quadrato(lato):
+    perimetro = 4 * lato
+    return perimetro
+
+def perimetro_cerchio(raggio):
+    perimetro = 2 * 3.14 * raggio
+    return perimetro
+
+def perimetro_rettangolo(base, altezza):
+    perimetro = 2 * (base + altezza)
+    return perimetro
+def continuare():
+    risposta = input("Vuoi continuare? (Sì/No): ").lower()
+    return risposta.startswith('s')
+
+
+while True:
+    print("Benvenuto, scegli la forma di cui calcolare il perimetro")
+    print("1 >>> Quadrato")
+    print("2 >>> Cerchio")
+    print("3 >>> Rettangolo")
+    print("0 >>> Esci")
+    selezione = int(input("Inserisci la tua scelta: "))
+    print("\n")
+    
+    if selezione == 1:
+        lato = float(input("Inserisci il valore del lato: "))
+        perimetro = perimetro_quadrato(lato)
+        print("Il perimetro è", perimetro)
+        if not continuare ():
+            print ("Arrivederci!")
+            break
+        
+    elif selezione == 2:
+        raggio = float(input("Inserisci il valore del raggio: "))
+        perimetro = perimetro_cerchio(raggio)
+        print("Il perimetro è:", perimetro)
+        if not continuare ():
+            print ("Arrivederci!")
+            break
+        
+    elif selezione == 3:
+        base = float(input("Inserisci la base: "))
+        altezza = float(input("Inserisci l'altezza: "))
+        perimetro = perimetro_rettangolo(base, altezza)
+        print("Il perimetro è: ", perimetro)
+        if not continuare ():
+            print ("Arrivederci!")
+            break
+        
+    elif selezione == 0:
+        print("Arrivederci")
+        break
+    else:
+        print("Selezione non valida. Riprova.")
